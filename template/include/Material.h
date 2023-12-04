@@ -15,6 +15,7 @@ struct Material {
 	// Material parameters
 	glm::vec4 m_color;
 	GLint m_texture;
+	GLint m_normal_texture;
 
 	inline void check() {
 		if (m_program == 0) {

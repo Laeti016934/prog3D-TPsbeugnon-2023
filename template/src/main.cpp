@@ -86,8 +86,16 @@ void draw() {
 		Material* material = inst.material;
 		Mesh* mesh = inst.mesh;
 		material->bind();
+		//Envoie la position de la caméra au shader
+		
 		material->setMatrices(Context::camera.projection, Context::camera.view, inst.matrix);
 		mesh->draw();
+		
+		GLfloat camPos[3];
+		camPos[0] = Context::camera.position[0];
+		camPos[1] = Context::camera.position[1];
+		camPos[2] = Context::camera.position[2];
+		glUniform3fv(material->getUniform("cameraPosition"),1, camPos);
 	}
 }
 

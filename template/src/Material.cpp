@@ -1,6 +1,7 @@
 // Local includes
 #include "Material.h"
 #include "Shader.h"
+#include "Texture.h"
 // GLM includes
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -20,12 +21,16 @@ void Material::init() {
 	check();
 	// TODO : set initial parameters
 	m_color = {1.0, 1.0, 1.0, 1.0};
-	m_texture = 0;
+	//Texture bois en niveau de gris
+	m_texture = loadTexture2DFromFilePath("data/BoomBox_baseColor.png");
+	//Texure bois normal
+	m_normal_texture = loadTexture2DFromFilePath("data/BoomBox_normal.png");
 }
 
 void Material::clear() {
 	// nothing to clear
 	// TODO: Add the texture or buffer you want to destroy for your material
+	//glDeleteTextures(1, &m_texture);
 }
 
 void Material::bind() {
@@ -39,11 +44,15 @@ void Material::internalBind() {
 	GLint color = getUniform("color");
 	glUniform4fv(color, 1, glm::value_ptr(m_color));
 	if (m_texture != -1) {
-		glBindTexture(GL_TEXTURE_2D, m_texture);
 		glActiveTexture(GL_TEXTURE0);
-		glUniform1i(getUniform("colorTexture"), GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, m_texture);
+		glUniform1i(getUniform("colorTexture"), 0);
 	}
-
+	if (m_normal_texture != -1) {
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, m_normal_texture);
+		glUniform1i(getUniform("normalTexture"), 1);
+	}
 	// TODO : Add your custom parameters here
 }
 

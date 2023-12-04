@@ -65,4 +65,23 @@ static inline std::istream & operator >> (std::istream & s , Vec3 & p) {
     return s;
 }
 
+//Calculer le produit scalaire entre 2 vecteurs
+static float dot(Vec3 const &a, Vec3 const &b) {
+    //TODO: Fonction à compléter
+    float res; //Faire le calcul ici et assigner le resultat à res
+    res = a[0] * b[0] + a[1] * b[1] + a[2] * b[2];  // 〈a, b〉 = a1b1 + a2b2 + a3b3
+    return res;
+}
+
+
+//Calculer le produit vectoriel entre 2 vecteurs
+static Vec3 cross(Vec3 const &a, Vec3 const &b) {
+    //TODO: Fonction à compléter
+    Vec3 res; //Faire le calcul ici et assigner le resultat à res
+    res[0] = a[1] * b[2] - a[2] * b[1];
+    res[1] = a[2] * b[0] - a[0] * b[2];
+    res[2] = a[0] * b[1] - a[1] * b[0];
+    return res;
+}
+
 #endif
