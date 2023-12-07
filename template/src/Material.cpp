@@ -26,10 +26,10 @@ void Material::init() {
 	check();
 	// TODO : set initial parameters
 	m_color = {1.0, 1.0, 1.0, 1.0};
-
-	m_texture = loadTexture2DFromFilePath("data/WaterBottle_baseColor.png");
-	
-	m_normal_texture = loadTexture2DFromFilePath("data/WaterBottle_normal.png");
+	//Texture modèle
+	m_texture = loadTexture2DFromFilePath("data/BoomBox_baseColor.png");
+	//Texture normal modèle
+	m_normal_texture = loadTexture2DFromFilePath("data/BoomBox_normal.png");
 }
 
 void Material::clear() {
