@@ -1,4 +1,4 @@
-# Install script for directory: /home/laetitia/Documents/MASTER/Prog_3D/TP-Textures/prog3D-TPsbeugnon-2023/template
+# Install script for directory: /home/laetitia/Documents/MASTER/Prog_3D/TP-Textures/prog-3D-2023-main/template
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/laetitia/Documents/MASTER/Prog_3D/TP-Textures/prog3D-TPsbeugnon-2023/template/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/laetitia/Documents/MASTER/Prog_3D/TP-Textures/prog-3D-2023-main/template/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

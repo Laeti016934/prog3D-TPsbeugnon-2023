@@ -20,6 +20,11 @@ std::vector<Mesh*> Context::meshes;
 bool Context::refreshMatrices = true;
 bool Context::fullScreen = false;
 
+GLuint Context::skyboxProgram;
+GLuint Context::skyboxTexture;
+GLuint Context::skyboxVAO;
+GLuint Context::skyboxVBO;
+
 void clearContext() {
   for (Mesh* mesh: Context::meshes) {
     delete mesh;

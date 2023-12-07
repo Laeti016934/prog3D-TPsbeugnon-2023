@@ -6,6 +6,7 @@
 
 #include <stdexcept>
 
+
 GLuint loadTexture2DFromFilePath(const std::string& path) {
 	GLuint texture;
 	glGenTextures(1, &texture);

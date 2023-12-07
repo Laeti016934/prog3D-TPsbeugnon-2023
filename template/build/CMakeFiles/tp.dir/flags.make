@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/laetitia/Documents/MASTER/Prog_3D/TP-Textures/prog3D-TPsbeugnon-2023/template/include 
+CXX_INCLUDES = -I/home/laetitia/Documents/MASTER/Prog_3D/TP-Textures/prog-3D-2023-main/template/include 
 

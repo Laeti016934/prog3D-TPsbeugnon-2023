@@ -30,7 +30,6 @@ void Material::init() {
 void Material::clear() {
 	// nothing to clear
 	// TODO: Add the texture or buffer you want to destroy for your material
-	//glDeleteTextures(1, &m_texture);
 }
 
 void Material::bind() {

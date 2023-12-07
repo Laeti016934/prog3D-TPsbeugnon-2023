@@ -62,7 +62,9 @@ CMakeFiles/tp.dir/src/main.cpp.o: ../include/Mesh.h
 CMakeFiles/tp.dir/src/main.cpp.o: ../include/Mouse.h
 CMakeFiles/tp.dir/src/main.cpp.o: ../include/SceneLoader.h
 CMakeFiles/tp.dir/src/main.cpp.o: ../include/Shader.h
+CMakeFiles/tp.dir/src/main.cpp.o: ../include/Texture.h
 CMakeFiles/tp.dir/src/main.cpp.o: ../include/Trackball.h
+CMakeFiles/tp.dir/src/main.cpp.o: ../include/stb_image.h
 CMakeFiles/tp.dir/src/main.cpp.o: ../src/main.cpp
 
 CMakeFiles/tp.dir/src/stb_image.cpp.o: ../include/stb_image.h

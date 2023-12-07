@@ -21,13 +21,6 @@ Normalement le script de compilation s'occupe de compiler les deux modules une f
 
 ## Compilation
 
-### Automatique
-
-```
-sh build.sh
-```
-
-### A la main
 Pour créer le makefile :
 ```
 template/$ mkdir build
@@ -47,15 +40,13 @@ template/build$ make tp
 
 ## Exécution
 
-### Par le script `run.sh`
 ```
-sh run.sh ./data/bunny.obj
-```
+./tp ../data/bunny.obj # utilise le modèle bunny.obj du dossier `data`
+./tp ../data/ToyCar.glb # utilise le modèle ToyCar.glb du dossier `data`
+./tp <anyformat> # ce que vous voulez comme format suppporté par Assimp
 
-```
-./build/tp ./data/bunny.obj # utilise le modèle bunny.obj du dossier `data`
-./build/tp ./data/ToyCar.glb # utilise le modèle ToyCar.glb du dossier `data`
-./build/tp <anyformat> # ce que vous voulez comme format suppporté par Assimp
+
+sh run.sh data/bunny.obj
 ```
 
 

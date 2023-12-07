@@ -28,6 +28,11 @@ struct Context {
   static std::vector<Mesh*> meshes;
   static std::vector<Material*> materials;
   // std::vector<Texture*> textures;
+
+  static GLuint skyboxProgram;
+  static GLuint skyboxTexture;
+  static GLuint skyboxVAO;
+  static GLuint skyboxVBO;
 };
 
 void idle();
