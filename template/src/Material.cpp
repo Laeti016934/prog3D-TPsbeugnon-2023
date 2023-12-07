@@ -2,6 +2,7 @@
 #include "Material.h"
 #include "Shader.h"
 #include "Texture.h"
+#include "Context.h"
 // GLM includes
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -17,14 +18,18 @@ Material::~Material() {
 
 void Material::init() {
 	// TODO : Change shader by your
-	m_program = load_shaders("shaders/unlit/vertex.glsl", "shaders/unlit/fragment.glsl");
+
+	//Shader de dépard
+	//m_program = load_shaders("shaders/unlit/vertex.glsl", "shaders/unlit/fragment.glsl");
+	//Shader de la réflexion
+	m_program = load_shaders("shaders/reflective/vertex.glsl", "shaders/reflective/fragment.glsl");
 	check();
 	// TODO : set initial parameters
 	m_color = {1.0, 1.0, 1.0, 1.0};
-	//Texture bois en niveau de gris
-	m_texture = loadTexture2DFromFilePath("data/BoomBox_baseColor.png");
-	//Texure bois normal
-	m_normal_texture = loadTexture2DFromFilePath("data/BoomBox_normal.png");
+
+	m_texture = loadTexture2DFromFilePath("data/WaterBottle_baseColor.png");
+	
+	m_normal_texture = loadTexture2DFromFilePath("data/WaterBottle_normal.png");
 }
 
 void Material::clear() {
@@ -39,20 +44,27 @@ void Material::bind() {
 }
 
 void Material::internalBind() {
-	// bind parameters
-	GLint color = getUniform("color");
-	glUniform4fv(color, 1, glm::value_ptr(m_color));
-	if (m_texture != -1) {
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, m_texture);
-		glUniform1i(getUniform("colorTexture"), 0);
-	}
-	if (m_normal_texture != -1) {
-		glActiveTexture(GL_TEXTURE1);
-		glBindTexture(GL_TEXTURE_2D, m_normal_texture);
-		glUniform1i(getUniform("normalTexture"), 1);
-	}
+	/*Paramètres pour le shader de départ ( shaders/unlit )
+		// bind parameters
+		GLint color = getUniform("color");
+		glUniform4fv(color, 1, glm::value_ptr(m_color));
+		if (m_texture != -1) {
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, m_texture);
+			glUniform1i(getUniform("colorTexture"), 0);
+		}
+		if (m_normal_texture != -1) {
+			glActiveTexture(GL_TEXTURE1);
+			glBindTexture(GL_TEXTURE_2D, m_normal_texture);
+			glUniform1i(getUniform("normalTexture"), 1);
+		}
+	*/
 	// TODO : Add your custom parameters here
+
+	//Paramètres pour la réflexion
+	glUniform3fv(getUniform("cameraPos"), 1, glm::value_ptr(Context::camera.position));
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, Context::skyboxTexture);
 }
 
 void Material::setMatrices(glm::mat4& projectionMatrix, glm::mat4& viewMatrix, glm::mat4& modelMatrix)

@@ -65,7 +65,7 @@ unsigned int loadCubemap(const std::vector<std::string> & faces) {
 }  
 
 void initSkybox() {
-	//Positions des sommets de la skybox
+	//Position des sommets de la skybox
 	float skyboxVertices[] = {
 		-1.0f,  1.0f, -1.0f,
 		-1.0f, -1.0f, -1.0f,
@@ -138,7 +138,10 @@ void init() {
 	}
 
 	Context::camera.resize(SCREENWIDTH, SCREENHEIGHT);
-	Context::skyboxProgram = load_shaders("shaders/skybox/vertex.glsl", "shaders/skybox/fragment.glsl");
+	//Context::skyboxProgram = load_shaders("shaders/skybox/vertex.glsl", "shaders/skybox/fragment.glsl");
+	Context::skyboxProgram = load_shaders("shaders/reflective/vertex.glsl", "shaders/reflective/fragment.glsl");
+
+
 
 	// Load skybox texture
 	// Source : https://opengameart.org/content/field-skyboxes
