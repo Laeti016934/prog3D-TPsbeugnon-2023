@@ -1,4 +1,4 @@
-Info,  T0: Load data/WaterBottle.gltf
+Info,  T0: Load data/BoomBox.gltf
 Info,  T0: Found a matching importer for this file format: glTF2 Importer.
 Info,  T0: Import root directory is 'data/'
 Info,  T0: Entering post processing pipeline
