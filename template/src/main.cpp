@@ -138,10 +138,7 @@ void init() {
 	}
 
 	Context::camera.resize(SCREENWIDTH, SCREENHEIGHT);
-	//Context::skyboxProgram = load_shaders("shaders/skybox/vertex.glsl", "shaders/skybox/fragment.glsl");
-	Context::skyboxProgram = load_shaders("shaders/reflective/vertex.glsl", "shaders/reflective/fragment.glsl");
-
-
+	Context::skyboxProgram = load_shaders("shaders/skybox/vertex.glsl", "shaders/skybox/fragment.glsl");
 
 	// Load skybox texture
 	// Source : https://opengameart.org/content/field-skyboxes

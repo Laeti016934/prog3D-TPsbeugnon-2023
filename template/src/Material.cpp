@@ -19,7 +19,7 @@ Material::~Material() {
 void Material::init() {
 	// TODO : Change shader by your
 
-	//Shader de dépard
+	//Shader de départ
 	//m_program = load_shaders("shaders/unlit/vertex.glsl", "shaders/unlit/fragment.glsl");
 	//Shader de la réflexion
 	m_program = load_shaders("shaders/reflective/vertex.glsl", "shaders/reflective/fragment.glsl");
